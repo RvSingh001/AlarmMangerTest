@@ -2,6 +2,7 @@ package com.example.alarmmangertest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
         public void activeAlarm(int time)
         {
 
@@ -43,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
             AlarmManager alarmManager= (AlarmManager) getApplicationContext().getSystemService(ALARM_SERVICE);
             PendingIntent pendingIntent=PendingIntent.getBroadcast(getApplicationContext(),0, intent,0);
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-                    System.currentTimeMillis()+time* 60000L,
-                    time* 60000L,
+                    System.currentTimeMillis(),
+                    1000*60,
                     pendingIntent);
-
+            Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_LONG).show();
             //activeAlarm(time);
         }
 
