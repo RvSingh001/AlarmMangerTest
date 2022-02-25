@@ -15,13 +15,14 @@ import java.util.concurrent.TimeUnit;
 
 public class WorkMangerExample extends AppCompatActivity {
 
-    Button one,perodic;
+    Button one, perodic;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work_manger_example);
-        one=findViewById(R.id.btn);
-        perodic=findViewById(R.id.btn1);
+        one = findViewById(R.id.btn);
+        perodic = findViewById(R.id.btn1);
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,15 +37,14 @@ public class WorkMangerExample extends AppCompatActivity {
         });
 
 
-
     }
-    public void oneTimeTask()
-    {
+
+    public void oneTimeTask() {
         OneTimeWorkRequest oneTimeWorkRequest =
                 new OneTimeWorkRequest.Builder(Work.class)
                         .build();
 
-        OneTimeWorkRequest oneTimeWorkRequest1=
+        OneTimeWorkRequest oneTimeWorkRequest1 =
                 new OneTimeWorkRequest.Builder(Work1.class)
                         .build();
 
@@ -54,13 +54,14 @@ public class WorkMangerExample extends AppCompatActivity {
 
 
     }
-    public void perodicTask()
-    {
-        PeriodicWorkRequest periodicWorkRequest =
-                new PeriodicWorkRequest.Builder(Work.class,1, TimeUnit.MINUTES)
+
+    public void perodicTask() {
+        final PeriodicWorkRequest periodicWorkRequest =
+                new PeriodicWorkRequest.Builder(Work.class, 15, TimeUnit.MINUTES)
+                        .setInitialDelay(6000,TimeUnit.MILLISECONDS)
                         .build();
 
-        WorkManager.getInstance(getApplicationContext())
-                .enqueue(periodicWorkRequest);
+        WorkManager workManager = WorkManager.getInstance(getApplicationContext());
+        workManager.enqueue(periodicWorkRequest);
     }
 }
