@@ -34,7 +34,7 @@ public class JobShedulerTest extends AppCompatActivity {
     }
     public void scheduleJob(View v) {
         ComponentName componentName = new ComponentName(this, Job.class);
-        JobInfo info = new JobInfo.Builder(123, componentName).setPeriodic(15 * 60 * 1000)
+        JobInfo info = new JobInfo.Builder(123, componentName).setPeriodic( 15*60 * 1000)
                 .setRequiresCharging(false)
                 .setPersisted(true)
                 .build();
