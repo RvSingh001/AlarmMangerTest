@@ -1,14 +1,15 @@
-package com.example.alarmmangertest;
+package com.example.alarmmangertest.workmanger;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
-import androidx.work.WorkRequest;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.alarmmangertest.R;
 
 import java.util.concurrent.TimeUnit;
 
@@ -39,26 +40,27 @@ public class WorkMangerExample extends AppCompatActivity {
     }
     public void oneTimeTask()
     {
-        OneTimeWorkRequest uploadWorkRequest =
+        OneTimeWorkRequest oneTimeWorkRequest =
                 new OneTimeWorkRequest.Builder(Work.class)
                         .build();
 
-        OneTimeWorkRequest uploadWorkRequest1=
+        OneTimeWorkRequest oneTimeWorkRequest1=
                 new OneTimeWorkRequest.Builder(Work1.class)
                         .build();
 
-        WorkManager.getInstance(getApplicationContext()).beginWith(uploadWorkRequest).then(uploadWorkRequest1).
+        WorkManager.getInstance(getApplicationContext()).beginWith(oneTimeWorkRequest).
+                then(oneTimeWorkRequest1).
                 enqueue();
 
 
     }
     public void perodicTask()
     {
-        PeriodicWorkRequest uploadWorkRequest =
+        PeriodicWorkRequest periodicWorkRequest =
                 new PeriodicWorkRequest.Builder(Work.class,1, TimeUnit.MINUTES)
                         .build();
 
         WorkManager.getInstance(getApplicationContext())
-                .enqueue(uploadWorkRequest);
+                .enqueue(periodicWorkRequest);
     }
 }

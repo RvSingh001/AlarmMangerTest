@@ -1,24 +1,13 @@
-package com.example.alarmmangertest;
+package com.example.alarmmangertest.alarm;
 
 import static android.content.Context.ALARM_SERVICE;
 
-import android.annotation.SuppressLint;
 import android.app.AlarmManager;
-import android.app.Application;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.IBinder;
-import android.os.PowerManager;
-import android.os.Vibrator;
 import android.widget.Toast;
-
-import androidx.annotation.Nullable;
-import androidx.legacy.content.WakefulBroadcastReceiver;
-
-import java.security.Provider;
 
 public class Alrm extends BroadcastReceiver {
     @Override

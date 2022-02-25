@@ -14,20 +14,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlarmMangerTest">
         <activity
-            android:name=".WorkMangerExample"
-            android:exported="true" >  <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:name=".backgroud.BackgroudTask"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
+        <activity
+            android:name=".jobsechduler.JobShedulerTest"
+            android:exported="false" />
+        <activity
+            android:name=".workmanger.WorkMangerExample"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".alarm.MainActivity"
+            android:exported="false" />
+
         <receiver
-            android:name=".Alrm"
+            android:name=".alarm.Alrm"
             android:enabled="true"
             android:exported="false"
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED"

@@ -1,8 +1,7 @@
-package com.example.alarmmangertest;
+package com.example.alarmmangertest.alarm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -11,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.alarmmangertest.R;
 
 public class MainActivity extends AppCompatActivity {
     private EditText ed1;

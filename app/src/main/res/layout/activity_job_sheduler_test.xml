@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".workmanger.WorkMangerExample">
+    tools:context=".jobsechduler.JobShedulerTest">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,17 +14,16 @@
         >
 
         <Button
-            android:id="@+id/btn"
+            android:id="@+id/sechdule"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="One Time Task"
+            android:text="Sechdule Task"
             />
         <Button
-            android:id="@+id/btn1"
+            android:id="@+id/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Periodic Task"
+            android:text="Cancel Task"
             />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
