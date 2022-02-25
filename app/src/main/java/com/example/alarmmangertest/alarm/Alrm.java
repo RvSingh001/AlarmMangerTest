@@ -27,7 +27,7 @@ public class Alrm extends BroadcastReceiver {
         }
         else {
             Toast.makeText(context.getApplicationContext(), "Else Part", Toast.LENGTH_LONG).show();
-
+            //Rajveer
             //Toast.makeText(context.getApplicationContext(),String.valueOf(intent.getAction().equals("android.intent.action.BOOT_COMPLETED")),Toast.LENGTH_LONG).show();
         }
 
